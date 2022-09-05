@@ -73,5 +73,5 @@ public class RepositoryDetailsController {
 		}
 		return trendDetails;
 	}
-}
+
 }
