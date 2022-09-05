@@ -69,9 +69,9 @@ public class RepositoryDetailsController {
 
 		}catch (Exception e) {
 			trendDetails.put("test", "MyTweet");
-            System.out.println("Exception "+e.getMessage());;;
+            System.out.println("Exception "+e.getMessage());
 		}
 		return trendDetails;
 	}
-
+}
 }
