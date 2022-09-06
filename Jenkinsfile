@@ -1,5 +1,6 @@
-def imageName = 'https://manikanta07.jfrog.io/artifactory/default-maven-local/'
-def registry  = 'https://manikanta07.jfrog.io'
+def imageName = 'stalin.jfrog.io/default-docker-local/valaxy-rtp'
+def registry  = 'https://stalin.jfrog.io'
+def version   = '1.0.3'
 def app
 pipeline {
     agent {
