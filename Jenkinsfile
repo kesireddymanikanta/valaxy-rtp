@@ -1,5 +1,5 @@
-def imageName = 'stalin.jfrog.io/default-docker-local/twittertrend'
-def registry  = 'https://stalin.jfrog.io'
+def imageName = 'https://manikanta07.jfrog.io/artifactory/default-maven-local/'
+def registry  = 'https://manikanta07.jfrog.io'
 def app
 pipeline {
     agent {
@@ -49,6 +49,15 @@ pipeline {
                   echo '<--------------- Sonar Gate Analysis Ends  --------------->'
                 }
             }
+        }
+        stage("Docker Build") {
+          steps {
+            script {
+               echo '<--------------- Docker Build Started --------------->'
+               app = docker.build(imageName)
+               echo '<--------------- Docker Build Ends --------------->'
+            }
+          }
         }
 
     }
