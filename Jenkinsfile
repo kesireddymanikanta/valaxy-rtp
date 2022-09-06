@@ -1,5 +1,5 @@
-def imageName = 'stalin.jfrog.io/default-docker-local/valaxy-rtp'
-def registry  = 'https://stalin.jfrog.io'
+def imageName = 'manikanta07.jfrog.io/artifactory/default-maven-local/valaxy'
+def registry  = 'https://manikanta07.jfrog.io/'
 def version   = '1.0.3'
 def app
 pipeline {
