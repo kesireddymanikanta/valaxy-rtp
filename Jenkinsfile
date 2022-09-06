@@ -16,6 +16,15 @@ pipeline {
                 echo '<------------- Build completed ----------->'
             }
         }
+           stage("Docker Build") {
+          steps {
+            script {
+               echo '<--------------- Docker Build Started --------------->'
+               app = docker.build(imageName)
+               echo '<--------------- Docker Build Ends --------------->'
+            }
+          }
+        }
         stage('Unit Test') {
             steps {
                 echo '<--------------- Unit Testing started  --------------->'
@@ -37,15 +46,7 @@ pipeline {
             }    
         }
          
-        stage("Docker Build") {
-          steps {
-            script {
-               echo '<--------------- Docker Build Started --------------->'
-               app = docker.build(imageName)
-               echo '<--------------- Docker Build Ends --------------->'
-            }
-          }
-        }
+     
 
     }
  }
