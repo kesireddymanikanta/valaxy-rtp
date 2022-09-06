@@ -1,4 +1,4 @@
-def imageName = 'manikanta07.jfrog.io/artifactory/default-maven-local/valaxy'
+def imageName = 'manikanta07.jfrog.io/artifactory/default-maven-local/'
 def registry  = 'https://manikanta07.jfrog.io/'
 def version   = '1.0.3'
 def app
@@ -48,7 +48,17 @@ pipeline {
           }
         }
         
-     
+      stage("Docker Publish") {
+          steps {
+            script {
+               echo '<--------------- Docker Publish Started --------------->'
+               docker.withRegistry(registry, 'artifactorycredentialid'){
+                 docker.image(imageName).push(version)
+               }
+               echo '<--------------- Docker Publish Ends --------------->'
+            }
+          }
+        }
 
     }
  }
