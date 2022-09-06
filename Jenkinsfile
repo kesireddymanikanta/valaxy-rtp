@@ -37,19 +37,14 @@ pipeline {
                 echo '<--------------- Sonar Analysis Ends --------------->'
             }    
         }
-         stage("Quality Gate") {
-            steps {
-                script {
-                  echo '<--------------- Sonar Gate Analysis Started --------------->'
-                    timeout(time: 1, unit: 'HOURS'){
-                       def qg = waitForQualityGate()
-                        if(qg.status !='OK') {
-                            error "Pipeline failed due to quality gate failures: ${qg.status}"
-                        }
-                    }  
-                  echo '<--------------- Sonar Gate Analysis Ends  --------------->'
-                }
+   stage("Docker Build") {
+          steps {
+            script {
+               echo '<--------------- Docker Build Started --------------->'
+               app = docker.build(imageName)
+               echo '<--------------- Docker Build Ends --------------->'
             }
+          }
         }
         
      
