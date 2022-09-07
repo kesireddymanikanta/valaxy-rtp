@@ -53,7 +53,7 @@ pipeline {
             script {
                echo '<--------------- Docker Publish Started --------------->'
                docker.withRegistry(registry, 'artifactorycredentialid'){
-                 docker.image(imageName)
+                 docker.image(imageName).push()
                }
                echo '<--------------- Docker Publish Ends --------------->'
             }
