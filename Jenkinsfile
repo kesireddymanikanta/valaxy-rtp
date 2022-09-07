@@ -1,4 +1,4 @@
-def imageName = 'manikanta07.jfrog.io/rm-default-maven'
+def imageName = 'manikanta07.jfrog.io/rm-default-maven/valaxy'
 def registry  = 'https://manikanta07.jfrog.io'
 def version   = '1.0.3'
 def app
