@@ -2,7 +2,7 @@ package com.stalin.demo.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import org.kohsuke.github.GHRepositorySearchBuilder;
 import org.kohsuke.github.GitHub;
@@ -73,5 +73,19 @@ public class RepositoryDetailsController {
 		}
 		return trendDetails;
 	}
+	@GetMapping("/getCustomers")
+public List<String> getCustomersList(){
+List<String> list=new ArrayList<String>();  
+ //Adding elements in the List  
+ list.add("ELANCO");  
+ list.add("HID");  
+ list.add("LOGISTYX");  
+ list.add("GILEAD");  
+list.add("DELARUE");
+list.add("OMNI CELL");
+
+return list;
+
+}
 
 }
